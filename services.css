@@ -1,0 +1,259 @@
+/* google font import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    width: 100%;
+}
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #F5F3EF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .left-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .right-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000;
+    user-select: none;
+  }
+  .logo img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 6px 12px;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+  nav ul li a:hover {
+    color: #C07136;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-wrap: nowrap;
+    }
+    .left-container, .right-container {
+      flex: 1;
+      justify-content: center;
+    }
+    nav ul {
+      gap: 15px;
+    }
+    nav ul li a {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+  }
+  
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #A77C5C;
+    margin-top: 0;
+ 
+}
+
+footer p {
+    color: white;
+    
+}
+
+/* SECTION START */
+
+.start {
+   margin: 0;
+    padding: 0;
+    height: 75vh;
+    width: 100%;
+    background-image: url(images/card.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 200px;
+  }
+  
+  .left {
+    left: 0;
+    background-color: white;
+  }
+  
+
+  .right {
+    right: 0;
+    background-color: white;
+  }
+
+
+/*Care*/
+.headings {
+  text-align: center;
+  
+}
+
+.main-title {
+  font-family: serif;
+  font-size: 2.5em;
+  color: #a77c5c;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  padding-top: 1% 
+}
+
+.sub-title {
+  font-family: sans-serif;
+  font-size: 1em;
+  color: #A77C5C;
+  margin-top: 5px;
+  padding-bottom: 1%
+}
+
+  .appointment-btn {
+  display: inline-block; 
+  padding: 10px 20px; 
+  background-color: #FFFFFF; 
+  color: #A77C5C; 
+  text-decoration: none; 
+  border: none; 
+  cursor: pointer; 
+  font-size: 16px; 
+  border-radius: 50px; 
+  font-family: "Playfair Display", serif;
+}
+
+/*Services*/
+.service-block img {
+  width: 100px;               
+  height: 100px;              
+  border-radius: 50%;         
+  display: block;             
+  margin: 0 auto 1rem auto;   
+  object-fit: cover;       
+}
+
+.services-section{
+  background-color: #e3d5ca
+}
+
+.service-title {
+  color: #A77C5F;
+}
+
+.service-list {
+  color: #A77C5F;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap; 
+  margin: 0 auto; 
+  max-width: 1200px;
+}
+
+.s1, .s2 {
+  flex: 1; 
+  min-width: 300px; 
+  background-color: #f9f9f9;
+  padding: 15px;
+  
+}
+
+.grid-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  margin: 0 auto; 
+  max-width: 1200px;
+  
+}
+
+.s3, .s4 {
+  flex: 1;
+  min-width: 300px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  
+}
+
+.text {
+  text-align: justify;
+}
+
+.site-footer {
+  background-color: #654832;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+}

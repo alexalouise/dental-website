@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Appointment Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Playfair Display", serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+       /* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #F5F3EF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .left-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .right-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000;
+    user-select: none;
+  }
+  .logo img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 6px 12px;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+  nav ul li a:hover {
+    color: #C07136;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-wrap: nowrap;
+    }
+    .left-container, .right-container {
+      flex: 1;
+      justify-content: center;
+    }
+    nav ul {
+      gap: 15px;
+    }
+    nav ul li a {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+  }
+
+        /* FORM STYLES */
+        body {
+            min-height: 100vh;
+            background: #F5F3EF;
+        }
+
+        .book-container {
+            width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #F7F2E7;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .book-container h2 {
+            text-align: center;
+            color: black;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .form-outer {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        form {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .page {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .field {
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 70px; 
+            margin-top: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .next, .submit {
+            background: #A77C5C;
+            color: white;
+        }
+
+        .prev {
+            background: #ddd;
+            color: #333;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left-container">
+            <a href="#" class="logo">
+            <img src="images/logo.png" alt="Logo" />
+            Dental Ioúlios
+            </a>
+        </div>
+
+        <div class="right-container">
+           <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="book.html" style="color:#A77C5C">APPOINTMENT</a></li>
+            </ul>
+           </nav>
+        </div>
+    </header>
+
+    <div class="book-container">
+        <h2>Dental Ioúlios | General Dentistry • Orthodontics • Cosmetic Dentistry • Oral Surgery</h2>
+        
+        <div class="form-outer">
+            <form id="appointmentForm" action="#" method="POST">
+                <!-- Page 1 -->
+                <div class="page">
+                    <div class="field">
+                        <label class="label">First Name</label>
+                        <input type="text" name="firstname" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Middle Name</label>
+                        <input type="text" name="middlename" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Last Name</label>
+                        <input type="text" name="lastname" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Age</label>
+                        <input type="number" name="age" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Birthdate</label>
+                        <input type="date" name="birthdate" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Gender</label>
+                        <select name="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Contact Number</label>
+                        <input type="tel" name="contact" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Email Address</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    
+                    <div class="field btns">
+                        <button type="button" class="next" onclick="nextPage()">Next</button>
+                    </div>
+                </div>
+
+                <!-- Page 2 -->
+                <div class="page">
+                    <div class="field">
+                        <label class="label">I am a/an..</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="newpatient" name="patient" value="new" required checked>
+                                <label for="newpatient">New Patient</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="existingpatient" name="patient" value="existing" required>
+                                <label for="existingpatient">Existing Patient</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Preferred Appointment Date</label>
+                        <input type="date" name="appointment_date" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Service Request</label>
+                        <input type="text" name="service" required>
+                    </div>
+                    
+                    <div class="field btns">
+                        <button type="button" class="prev" onclick="prevPage()">Previous</button>
+                        <button type="submit" class="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('appointmentForm');
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+const formOuter = document.querySelector('.form-outer');
+
+function updateFormPosition() {
+    form.style.transform = `translateX(-${currentPage * 100}%)`;
+}
+
+function nextPage() {
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        updateFormPosition();
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        updateFormPosition();
+    }
+}
+
+// Initialize form position
+updateFormPosition();
+
+// Form handling
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validate all fields
+    const requiredInputs = document.querySelectorAll('input[required], select[required], textarea[required]');
+    let isValid = true;
+    
+    requiredInputs.forEach(input => {
+        if (!input.value) {
+            isValid = false;
+            input.style.borderColor = 'red';
+        } else {
+            input.style.borderColor = '#ddd';
+        }
+    });
+
+    if (isValid) {
+        // Show success message
+        alert('Form successfully submitted! Kindly wait for the confirmation of your appointment through text message and email.');
+        
+        // Reset form
+        form.reset();
+        
+        // Return to first page
+        currentPage = 0;
+        updateFormPosition();
+        
+        // Optional: Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        alert('Please fill all required fields!');
+    }
+});
+
+    </script>
+</body>
+</html>
