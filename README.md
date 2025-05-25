@@ -1,2 +1,2 @@
 # dental-website
-Project for Technopreneurship
+Project for Technopreneurship with 2 groupmates
